@@ -1,4 +1,4 @@
-# 🌏 **Explore Incredible India** 🇮🇳  
+# 🌏 **Explore TrekUp** 🇮🇳  
 Welcome to **Explore Incredible India**, a vibrant travel and tourism website dedicated to showcasing the beauty, diversity, and cultural heritage of India! Our mission is to provide an immersive experience for travelers while promoting **sustainable tourism** and **cultural preservation**.  
 
 ---
