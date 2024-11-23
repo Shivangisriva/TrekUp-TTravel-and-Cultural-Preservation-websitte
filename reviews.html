@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./reviews.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <title>Experiences| Ratings | Reviews</title>
+  <style>
+    .review-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.modern-input {
+  width: 100%;
+  height: 120px;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  resize: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.modern-input:focus {
+  border-color: #007bff;
+  box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.submit-btn {
+  align-self: flex-end;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+  </style>
+  </head>
+  <body>
+    <!--navbar-->
+    <nav
+ class="navbar navbar-expand-lg navbar-dark position-absolute w-100 top-0 mb-0"
+ style="background-color: rgba(0, 0, 0, 0.8)"
+>
+ <div class="container-fluid">
+   <!-- Logo and "TrekkUp" Brand with Sidebar Trigger -->
+   <a
+     class="navbar-brand d-flex align-items-center"
+     href="#"
+     data-bs-toggle="offcanvas"
+     data-bs-target="#sidebar"
+     aria-controls="sidebar"
+   >
+     <img
+       src="./Assets/logo_trekup.svg"
+       alt="Logo"
+       width="40"
+       height="40"
+       class="d-inline-block align-text-top"
+     />
+     <span class="brand-text ms-2"
+       ><b><i>TrekUp</i></b></span
+     >
+   </a>
+   <button
+     class="navbar-toggler"
+     type="button"
+     data-bs-toggle="collapse"
+     data-bs-target="#navbarSupportedContent"
+     aria-controls="navbarSupportedContent"
+     aria-expanded="false"
+     aria-label="Toggle navigation"
+   >
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div
+     class="collapse navbar-collapse"
+     id="navbarSupportedContent"
+   >
+     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item mx-3">
+            <a class="nav-link " aria-current="page" href="./index.html"
+              ><i class="fas fa-home"></i> Home</a
+            >
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="%"
+              ><i class="fas fa-user-friends"></i>Plan your Trip</a
+            >
+          </li>
+          <li class="nav-item mx-3 ">
+            <a class="nav-link active" href="./reviews.html"
+              ><i class="fas fa-briefcase"></i> Experience</a
+            >
+          </li>
+          <li class="nav-item mx-3">
+            <a
+              class="nav-link"
+              href="https://www.google.com/maps/search/tourist+spots+in+india"
+              target="_blank"
+            >
+              <i class="fas fa-map-marker-alt"></i> Map
+            </a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link " target="_blank" href="./faq.html"
+              ><i class="fas fa-star"></i>FAQ's</a
+            >
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="#" id="show-btn">
+              <i class="fas fa-language"></i> Language
+            </a>
+          </li>
+       <li class="nav-item" id="google_translate_element"></li>
+     </ul>
+   </div>
+ </div>
+</nav>
+<!--navbar ended-->
+<div
+class="offcanvas offcanvas-start"
+tabindex="-1"
+id="sidebar"
+aria-labelledby="sidebarLabel"
+>
+<div class="offcanvas-header">
+ <h5 class="offcanvas-title" id="sidebarLabel"></h5>
+ <button
+   type="button"
+   class="btn-close text-reset"
+   data-bs-dismiss="offcanvas"
+   aria-label="Close"
+ ></button>
+</div>
+<div class="offcanvas-body">
+  <ul class="list-unstyled">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./index.html#iternary1">Book your Hotel</a></li>
+    <li><a href="./index.html#iternary2">Plan your Trip with Us</a></li>
+    <li><a href="./reviews.html" target="_blank">Reviews</a></li>
+    <li><a href="./index.html">Go to Maps</a></li>
+    <li><a href="./faq.html">FAQ's</a></li>
+    <li><a href="./login.html">Login here</a></li>
+  </ul>
+</div>
+</div>
+    <header>
+      <div class="headline" style="margin-top: 25px;">
+        <span class="red">Real</span>
+        <span class="green">Adventures</span>,
+        <span class="red">Real</span>
+        <span class="green">Reviews</span>
+        <span class="red">!</span>
+      </div>
+      <div class="sub-text">~Discover true experiences with TrekUp~</div>
+      <div class="container">
+        <div class="container__left">
+          <h1>Read what our customers love about us</h1>
+          <p>
+            "Discover India's rich heritage, vibrant festivals, and stunning landscapes with TrekUp. We offer customized travel experiences tailored to your interests, allowing you to explore the best of India. Whether it's serene beaches or majestic mountains, TrekUp is your ultimate guide to unforgettable journeys."
+          </p>
+          <div class="review-container">
+            <label for="review-input">Share your review:</label>
+            <textarea id="review-input" class="modern-input" placeholder="Write your review here..."></textarea>
+            <button class="submit-btn">Submit Review</button>
+          </div>
+          
+        </div>
+        <div class="container__right">
+          <div class="card">
+            <img src="./Assets/person1.jpg" alt="user" />
+            <div class="card__content">
+              <span><i class="ri-double-quotes-l"></i></span>
+              <div class="card__details">
+                <p>
+                  Rating: ★★★★★
+                  Review:
+                  "TrekUp made my trip to Kerala absolutely unforgettable! From the breathtaking backwaters to the vibrant culture, everything was well-organized."
+                </p>
+                <h4>- Marnus Stephen</h4>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./Assets/person2.jpg" alt="user" />
+            <div class="card__content">
+              <span><i class="ri-double-quotes-l"></i></span>
+              <div class="card__details">
+                <p>
+                  Rating: ★★★★☆
+                  Review:
+                  "I traveled to Goa with TrekUp and had a fantastic time. The beach tours were great, and I especially loved the local food tour!"
+                </p>
+                <h4>- Andrew Jettpace</h4>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second row of cards -->
+          <div class="card">
+            <img src="./Assets/person3.jpg" alt="user" />
+            <div class="card__content">
+              <span><i class="ri-double-quotes-l"></i></span>
+              <div class="card__details">
+                <p>
+                  Rating: ★★★★★
+                  Review:
+                  "Thank you, TrekUp, for organizing an amazing trip to Rajasthan! The cultural experience was immersive!"
+                </p>
+                <h4>- Satakshi Malhotra</h4>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./Assets/person4.jpg" alt="user" />
+            <div class="card__content">
+              <span><i class="ri-double-quotes-l"></i></span>
+              <div class="card__details">
+                <p>
+                  Rating: ★★★☆☆
+                  Review:
+                  "The trip to the Himalayan mountains was a great escape, but I felt some aspects could have been better planned."
+                </p>
+                <h4>- Rajeev Sharma</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <!-- About Section -->
+          <div class="col-md-4 mb-4">
+            <h5 class="text-uppercase fw-bold">About Us</h5>
+            <p>Discover the vibrant landscapes, culture, and heritage of India with us. We offer curated experiences to make your journey across India unforgettable.</p>
+          </div>
+    
+          <!-- Popular Indian Destinations Section -->
+          <div class="col-md-2 mb-4">
+            <h5 class="text-uppercase fw-bold">Popular Destinations</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-decoration-none text-light">Goa</a></li>
+              <li><a href="#" class="text-decoration-none text-light">Jaipur, Rajasthan</a></li>
+              <li><a href="#" class="text-decoration-none text-light">Manali, Himachal Pradesh</a></li>
+              <li><a href="#" class="text-decoration-none text-light">Kerala Backwaters</a></li>
+            </ul>
+          </div>
+    
+          <!-- Travel Services Section -->
+          <div class="col-md-2 mb-4">
+            <h5 class="text-uppercase fw-bold">Our Services</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-decoration-none text-light">Flight Bookings</a></li>
+              <li><a href="#" class="text-decoration-none text-light">Hotel Reservations</a></li>
+              <li><a href="#" class="text-decoration-none text-light">Guided City Tours</a></li>
+              <li><a href="#" class="text-decoration-none text-light">Cultural Experiences</a></li>
+            </ul>
+          </div>
+    
+          <!-- Contact & Social Media Section -->
+          <div class="col-md-4 mb-4">
+            <h5 class="text-uppercase fw-bold">Contact Us</h5>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-geo-alt-fill"></i> 101 Tourism Road, New Delhi, India</li>
+              <li><i class="bi bi-telephone-fill"></i> +91 98765 43210</li>
+              <li><i class="bi bi-envelope-fill"></i> info@trekup.com</li>
+            </ul>
+    
+            <!-- Social Media Icons -->
+            <div class="social-icons mt-3">
+              <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="text-light"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="text-light"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+    </div>
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <small>&copy; 2024 Indian Travels. All rights reserved. | <a href="#" class="text-decoration-none text-light">Privacy Policy</a></small>
+        </div>
+      
+    </footer>
+    <button id="show-translate" style="display: none">
+      Show Google Translate
+    </button>
+
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            autoDisplay: false,
+          },
+          "google_translate_element"
+        );
+      }
+
+      // Show the Google Translate widget when the Language dropdown is clicked
+      document
+        .getElementById("show-btn")
+        .addEventListener("click", function () {
+          const translateElement = document.getElementById(
+            "google_translate_element"
+          );
+          translateElement.style.display =
+            translateElement.style.display === "none" ? "block" : "none";
+        });
+    </script>
+     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

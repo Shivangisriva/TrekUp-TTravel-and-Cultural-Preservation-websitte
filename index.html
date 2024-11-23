@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travels</title>
+    <!--chatbot link-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <link rel="stylesheet" href="./chat.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" href="./Assets/logo_trekup.svg">
+    <!--end of chatbot links-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+   
+  </head>
+  <body>
+     <!-- Chatbot Toggler -->
+     <button id="chatbot-toggler">
+        <span class="material-symbols-rounded">mode_comment</span>
+        <span class="material-symbols-rounded">close</span>
+      </button>
+  
+      <div class="chatbot-popup">
+        <!-- Chatbot Header -->
+        <div class="chat-header">
+          <div class="header-info">
+            <img class="chatbot-logo" src="./Assets/chatbot.png" width="50" height="50" viewBox="0 0 1024 1024">
+              <path
+                d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z"
+              />
+            </img>
+            <h2 class="logo-text">Chatbot</h2>
+          </div>
+          <button id="close-chatbot" class="material-symbols-rounded">keyboard_arrow_down</button>
+        </div>
+  
+        <!-- Chatbot Body -->
+        <div class="chat-body">
+          <div class="message bot-message">
+            <svg class="bot-avatar" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 1024 1024">
+              <path
+                d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z"
+              />
+            </svg>
+            <!-- prettier-ignore -->
+            <div class="message-text"> Hey there  <br /> How can I help you today? </div>
+          </div>
+        </div>
+  
+        <!-- Chatbot Footer -->
+        <div class="chat-footer">
+          <form action="#" class="chat-form">
+            <textarea placeholder="Message..." class="message-input" required></textarea>
+            <div class="chat-controls">
+              <button type="button" id="emoji-picker" class="material-symbols-outlined">sentiment_satisfied</button>
+              <div class="file-upload-wrapper">
+                <input type="file" accept="image/*" id="file-input" hidden />
+                <img src="#" />
+                <button type="button" id="file-upload" class="material-symbols-rounded">attach_file</button>
+                <button type="button" id="file-cancel" class="material-symbols-rounded">close</button>
+              </div>
+              <button type="submit" id="send-message" class="material-symbols-rounded">arrow_upward</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    <!--end of chatbot section-->
+    <!--section1-->
+
+    <div id="google_translate_element" style="display: none"></div>
+    <!-- Initially hidden -->
+    <div class="container_f1">
+      <form name="f1" class="f1">
+        <div class="image1">
+          <img
+            class="responsive-img"
+            name="image1"
+            src="https://source.unsplash.com/2480x1080/?india,monuments"
+            alt=""
+          />
+          <div class="text-overlay">
+            <div class="change inline-flex p-2">
+              <div class="dynamic text-4xl text-[#DAE3E5] ml-1 line-clamp-3">
+                <li class="list-none" style="list-style: none;">
+                  <span class="auto-type"></span>
+                </li>
+              </div>
+            </div>
+        
+            <!-- Static line below the typewriter effect -->
+            <div class="static-line quote">
+              &#x201C;Step into India, where dreams unfold, a land of riches, stories untold.&#x201D;
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!--sidebar-->
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="sidebar"
+      aria-labelledby="sidebarLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="sidebarLabel"></h5>
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="list-unstyled">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="#iternary2">Book your Hotel</a></li>
+          <li><a href="#iternary1">Plan your Trip with Us</a></li>
+          <li><a href="./reviews.html" target="_blank">Reviews</a></li>
+          <li><a href="./index.html">Go to Maps</a></li>
+          <li><a href="./faq.html">FAQ's</a></li>
+          <li><a href="./login.html">Login here</a></li>
+
+        </ul>
+      </div>
+    </div>
+    <!--navbar-->
+    <nav
+  class="navbar navbar-expand-lg navbar-dark position-absolute w-100 top-0 mb-0"
+  style="background-color: rgba(0, 0, 0, 0.8)"
+>
+  <div class="container-fluid">
+    <!-- Logo and "TrekkUp" Brand with Sidebar Trigger -->
+    <a
+      class="navbar-brand d-flex align-items-center"
+      href="#"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#sidebar"
+      aria-controls="sidebar"
+    >
+      <img
+        src="./Assets/logo_trekup.svg"
+        alt="Logo"
+        width="100"
+        height="40"
+        class="d-inline-block align-text-top"
+        style="margin-left: -10px; background-color: black;"
+      />
+      <span class="brand-text ms-2"
+        ><b><i></i></b></span
+      >
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse"
+      id="navbarSupportedContent"
+    >
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item mx-3">
+          <a class="nav-link active" aria-current="page" href="./index.html"
+            ><i class="fas fa-home"></i>&nbsp;Home</a
+          >
+        </li>
+        <li class="nav-item mx-3">
+          <a class="nav-link" href="#iternary1"
+            ><i class="fas fa-user-friends"></i>&nbsp;Plan your Trip</a
+          >
+        </li>
+        <li class="nav-item mx-3 ">
+          <a class="nav-link" href="./reviews.html"
+            ><i class="fas fa-briefcase"></i>&nbsp;Reviews</a
+          >
+        </li>
+        <li class="nav-item mx-3">
+          <a
+            class="nav-link"
+            href="https://www.google.com/maps/search/tourist+spots+in+india"
+            target="_blank"
+          >
+            <i class="fas fa-map-marker-alt"></i>&nbsp;Map
+          </a>
+        </li>
+        <li class="nav-item mx-3">
+          <a class="nav-link" target="_blank" href="./faq.html"
+            ><i class="fas fa-star"></i>&nbsp;FAQ's</a
+          >
+        </li>
+        <li class="nav-item mx-3">
+          <a class="nav-link" href="#" id="show-btn">
+            <i class="fas fa-language"></i>&nbsp;Language
+          </a>
+        </li>
+        <li class="nav-item" id="google_translate_element"></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <!--section2-->
+    <section class="attraction">
+      <h1>Explore India's Wonders</h1>
+      <p class="subheading">--Your next visit is just a click away!--</p>
+      <div class="scroll-container" id="scrollContainer">
+          <div class="card" style="width: 18rem">
+              <img src="./Assets/attraction11.jpg" class="card-img-top" alt="Attraction 1" />
+              <button class="sliding-button">
+                 <span> <a href="https://en.m.wikipedia.org/wiki/Manali,_Himachal_Pradesh" target="_blank">Explore!</a></span>
+              </button>
+          </div>
+          <div class="card" style="width: 18rem">
+              <img src="./Assets/attractionv.jpg" class="card-img-top" alt="Attraction 1" />
+              <button class="sliding-button">
+                  <span> <a href="https://www.makemytrip.com/tripideas/places-to-visit-in-varanasi" target="_blank">Discover!</a></span>
+              </button>
+          </div>
+          <div class="card" style="width: 18rem">
+              <img src="./Assets/attraction9.jpg" class="card-img-top" alt="Attraction 1" />
+              <button class="sliding-button">
+                  <span> <a href="https://en.wikipedia.org/wiki/Tourism_in_Jammu_and_Kashmir" target="_blank">Venture!</a></span>
+              </button>
+          </div>
+          <div class="card" style="width: 18rem">
+              <img src="./Assets/attraction8.jpg" class="card-img-top" alt="Attraction 1" />
+              <button class="sliding-button">
+                  <span><a href="https://goa-tourism.org.in/places-to-visit-in-goa" target="_blank">Unveil!</a></span>
+              </button>
+          </div>
+          <div class="card" style="width: 18rem">
+              <img src="./Assets/attraction6.jpg" class="card-img-top" alt="Attraction 1" />
+              <button class="sliding-button">
+                  <span><a href="https://www.thrillophilia.com/places-to-visit-in-delhi" target="_blank">Embark!</a></span>
+              </button>
+          </div>
+          <div class="card" style="width: 18rem">
+              <img src="./Assets/attraction2.jpg" class="card-img-top" alt="Attraction 1" />
+              <button class="sliding-button">
+                  <span><a href="https://uptourism.gov.in/en/article/mathura-vrindavan" target="_blank">Navigate!</a></span>
+              </button>
+          </div>
+          <div class="card" style="width: 18rem">
+              <img src="./Assets/attraction10.jpg" class="card-img-top" alt="Attraction 1" />
+              <button class="sliding-button">
+                  <span><a href="https://www.tajmahal.gov.in/nearby-attractions.aspx" target="_blank">Unlock!</a></span>
+              </button>
+          </div>
+          <div class="card" style="width: 18rem">
+              <img src="./Assets/attraction4.jpg" class="card-img-top" alt="Attraction 1" />
+              <button class="sliding-button">
+                  <span><a href="https://www.delhitourism.gov.in/dttdc/unexplored_delhi/isa_khan's_tomb.jsp" target="_blank">Chase!</a></span>
+              </button>
+          </div>
+          <div class="card" style="width: 18rem">
+              <img src="./Assets/attraction5.jpg" class="card-img-top" alt="Attraction 1" />
+              <button class="sliding-button">
+                  <span><a href="https://www.trawell.in/tamilnadu" target="_blank">Explore!</a></span>
+              </button>
+          </div>
+          <div class="card" style="width: 18rem">
+            <img src="./Assets/explore_more2.jpg" class="card-img-top" alt="Attraction 1" />
+            <button class="sliding-button">
+                <span><a href="https://in.lastminute.com/travel-magazine/places-for-2-days-trip" target="_blank">Click!</a></span>
+            </button>
+        </div>
+      </div>
+  </section>
+<!--currency convertor-->
+
+</section>
+<!--festivals-->
+<section id="festivalCarouselSection" class="my-5">
+  <div id="pageHeader">
+    <h2 class="text-center">Festive Flares</h2>
+    <p class="text-center smaller-text2">-- Explore the vibrant festivals of India --</p>
+  </div>
+  <div class="carousel-inner">
+    <!-- Slide 1 -->
+    <div class="card">
+     <a href=""><img src="./Assets/bihu.jpg" class="card-img-top" alt="bihu"></a> 
+      <div class="card-body">
+        <h5 class="card-title" style="font-weight: 500;"><b>Bihu (Assam)</b></h5>
+        <p class="card-text"><p>Bihu is a festival in Assam, celebrating the Assamese New Year and the arrival of spring...</p></p>
+      </div>
+    </div>
+    <div class="card">
+      <a href="https://en.wikipedia.org/wiki/Chhath" target="_blank"><img src="./Assets/chhath.jpg" class="card-img-top" alt="chhath"></a>
+      <div class="card-body">
+        <h5 class="card-title" style="font-weight: 600;">Chhath (Bihar)</h5>
+        <p class="card-text">Chhath is an important festival in Bihar, dedicated to the worship of the Sun God...</p>
+      </div>
+    </div>
+    <div class="card">
+      <a href="https://www.britannica.com/topic/Diwali-Hindu-festival" target="_blank"><img src="./Assets/diwali.webp" class="card-img-top" alt="diwali"></a>
+      <div class="card-body">
+        <h5 class="card-title" style="font-weight: 600;">Diwali (Uttar Pradesh)</h5>
+        <p class="card-text">Diwali in Uttar Pradesh is celebrated with great fervor...</p>
+      </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="card">
+      <a href="https://www.britannica.com/topic/Durga-Puja" target="_blank"><img src="./Assets/durga puja.jpg" class="card-img-top" alt="durga pooja"></a>
+      <div class="card-body">
+        <h5 class="card-title" style="font-weight: 600;">Durga Puja (Bengal)</h5>
+        <p class="card-text">Durga Puja in Bengal is a grand and cultural celebration...</p>
+      </div>
+    </div>
+    <div class="card">
+      <a href="https://www.britannica.com/topic/Ganesh-Chaturthi" target="_blank"><img src="./Assets/ganesh.jpg" class="card-img-top" alt="ganesh chaturthi"></a>
+      <div class="card-body">
+        <h5 class="card-title" style="font-weight: 600;">Ganesh Chaturthi (Maharashtra)</h5>
+        <p class="card-text">Ganesh Chaturthi in Maharashtra is a vibrant festival.</p>
+      </div>
+    </div>
+    <div class="card">
+      <a href="https://rishikeshdaytour.com/blog/ganga-aarti-in-rishikesh/" target="_blank"><img src="./Assets/ganga.jpg" class="card-img-top" alt="ganga aarti"></a>
+      <div class="card-body">
+        <h5 class="card-title" style="font-weight: 600;">Ganga Aarti (Varanasi)</h5>
+        <p class="card-text">Ganga Aarti in Varanasi is a sacred and mesmerizing ritual...</p>
+      </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="card">
+      <a href="https://en.wikipedia.org/wiki/Gangaur" target="_blank"><img src="./Assets/gangaur.jpg" class="card-img-top" alt="gangaur"></a>
+      <div class="card-body">
+        <h5 class="card-title" style="font-weight: 600;">Gangaur (Rajasthan)</h5>
+        <p class="card-text">Gangaur is a vibrant and important festival in Rajasthan...</p>
+      </div>
+    </div>
+    <div class="card">
+      <a href="https://religion.fandom.com/wiki/Krishna_Janmashtami" target="_blank"><img src="./Assets/Janmashtami.webp" class="card-img-top" alt="janmashtmi"></a>
+      <div class="card-body">
+        <h5 class="card-title" style="font-weight: 600;">Janmashtami (Vrindavan)</h5>
+        <p class="card-text">Janmashtami in Vrindavan is a grand celebration...</p>
+      </div>
+    </div>
+    <div class="card">
+      <a href="https://www.indianheritage.gov.sg/pongalo-pongal/what-is-pongal.html" target="_blank"><img src="./Assets/pongal.jpg" class="card-img-top" alt="pongal"></a>
+      <div class="card-body">
+        <h5 class="card-title" style="font-weight: 600;">Pongal (Tamil Nadu)</h5>
+        <p class="card-text">Pongal in Tamil Nadu is a harvest festival...</p>
+      </div>
+    </div>
+    <div class="card">
+      <a href="https://traveltriangle.com/blog/famous-festivals-of-india/" target="_blank"><img src="./Assets/explore_1.avif" class="card-img-top" alt="pongal"></a>
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text" style="text-align: center; font-size: 28px; font-weight: 600;">Unveil the beauty</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Food & Crafts-->
+<section class="food-crafts">
+  <h1>Artistic Moods, Exotic Foods!</h1>
+  <p class="food-crafts-subheading subheading2">--Crafts and Bites, Pure Delights!--</p>
+  <div class="container">
+    <figure class="snip1477">
+      <img src="./Assets/churma laddu.JPG"  alt="sample38" />
+      <div class="title">
+        <div>
+          <h2>Rajasthan</h2>
+          
+        </div>
+      </div>
+      <figcaption>
+        <p>Churma Ladoo is a traditional Indian sweet made from coarsely ground wheat flour, ghee, and jaggery or sugar.</p>
+      </figcaption>
+      <a href="https://everydayvegcooking.com/rajasthani-churma-laddoo/" target="_blank"></a>
+    </figure>
+
+    <figure class="snip1477 hover">
+      <img src="./Assets/bluepottery.jpg" target="_blank" alt="sample91" />
+      <div class="title">
+        <div>
+          <h2>Jaipur</h2> 
+        </div>
+      </div>
+      <figcaption>
+        <p>Blue pottery is a traditional Rajasthani ceramic art known for its vibrant blue color and intricate designs,used for decorative items and pottery.</p>
+      </figcaption>
+      <a href="https://en.wikipedia.org/wiki/Blue_pottery_of_Jaipur" target="_blank"></a>
+    </figure>
+
+    <figure class="snip1477">
+      <img src="./Assets/kundan.webp" target="_blank" alt="sample35" />
+      <div class="title">
+        <div>
+          <h2>Gujarat</h2>
+         
+        </div>
+      </div>
+      <figcaption>
+        <p>Kundan jewellery is a traditional Indian form of jewelry that features intricately set gemstones in gold, renowned for its royal and luxurious appeal..</p>
+      </figcaption>
+      <a href="https://en.wikipedia.org/wiki/Kundan" target="_blank"></a>
+    </figure>
+
+    <figure class="snip1477">
+      <img src="./Assets/Rasgulla.jpg" target="_blank" alt="sample35" />
+      <div class="title">
+        <div>
+          <h2>West Bengal</h2>
+          
+        </div>
+      </div>
+      <figcaption>
+        <p>Rasgulla is a popular Bengali sweet made from soft, spongy balls of cottage cheese soaked in sugar syrup, known for its light and delicate texture.</p>
+      </figcaption>
+      <a href="https://en.wikipedia.org/wiki/Rasgulla" target="_blank"></a>
+    </figure>
+
+    <figure class="snip1477">
+      <img src="./Assets/kebab(lucknow).jpg" target="_blank" alt="sample35" />
+      <div class="title">
+        <div>
+          <h2>Kebabs</h2>
+        
+        </div>
+      </div>
+      <figcaption>
+        <p>Kabab is a flavorful dish consisting of skewered and grilled or roasted meat, often seasoned with a blend of spices, commonly served with bread or rice.</p>
+      </figcaption>
+      <a href="https://en.wikipedia.org/wiki/Tunde_ke_kabab" target="_blank"></a>
+    </figure>
+    <figure class="snip1477">
+      <img src="./Assets/shawls(kashmir).jpg" target="_blank" alt="sample35" />
+      <div class="title">
+        <div>
+          <h2>Kashmir</h2>
+          <h6></h6>
+        </div>
+      </div>
+      <figcaption>
+        <p>Pashmina shawls are luxurious, soft, and lightweight shawls made from fine cashmere wool, known for their warmth, elegance, and intricate handwoven designs.</p>
+      </figcaption>
+      <a href="https://en.wikipedia.org/wiki/Pashmina_(material)" target="_blank"></a>
+    </figure>
+</section>
+
+
+<!--Hotel booking-->
+<section class="hotel booking" id="iternary1">
+  <header class="w3-display-container w3-content" style="max-width:1500px;">
+    <img class="w3-image" src="./Assets/hotel backgrnd.jpeg" alt="Hotel Image">
+
+    <!-- Itinerary Heading -->
+    <div class="itinerary-heading">
+      <h2 class="w3-center" style="font-family: 'Times New Roman', Times, serif; color: #fff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+        Itinerary Section
+      </h2>
+      <p class="w3-center" style="font-family: 'Times New Roman', Times, serif; color: #fff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  font-size: 2rem;">~Book a Stay~</p>
+    </div>
+
+    <div class="w3-display-left w3-padding w3-col l6 m8">
+      <div class="w3-container" style="background-color: #b884a0;">
+        <h2 style="font-family: 'Times New Roman', Times, serif;">
+          <i class="fa fa-bed w3-margin-right"></i>Hotel Name
+        </h2>
+      </div>
+      <div class="w3-container w3-white w3-padding-16" style="background-color: rgba(255, 255, 255, 0.8);">
+        <form id="hotelForm">
+          <!-- Form fields here -->
+          <div class="w3-row-padding" style="margin:0 -16px;">
+            <div class="w3-half w3-margin-bottom">
+              <label style="font-weight: bold;"><i class="fa fa-calendar-o"></i>Check In</label>
+              <input class="w3-input w3-border" type="date" name="checkin_date" id="checkin_date" required>
+            </div>
+            <div class="w3-half">
+              <label style="font-weight: bold;"><i class="fa fa-calendar-o"></i>Check Out</label>
+              <input class="w3-input w3-border" type="date" name="checkout_date" id="checkout_date" required>
+            </div>
+          </div>
+          <div class="w3-row-padding" style="margin:8px -16px;">
+            <div class="w3-half w3-margin-bottom">
+              <label style="font-weight: bold;"><i class="fa fa-male"></i> Adults</label>
+              <input class="w3-input w3-border" type="number" value="1" name="group_adults" id="group_adults" min="1" max="6">
+            </div>
+            <div class="w3-half">
+              <label style="font-weight: bold;"><i class="fa fa-child"></i> Kids</label>
+              <input class="w3-input w3-border" type="number" value="0" name="group_children" id="group_children" min="0" max="6">
+            </div>
+          </div>
+          <div class="w3-row-padding" style="margin:8px -16px;">
+            <div class="w3-half w3-margin-bottom">
+              <label style="font-weight: bold;"><i class="fa fa-map-marker"></i>Destination</label>
+              <input class="w3-input w3-border" type="text" name="ss" id="ss" placeholder="Enter destination (e.g., New York)" required>
+            </div>
+          </div>
+          <button class="w3-button custom-button" style="background-color: #b884a0;" type="button" onclick="submitForm()">
+            <i class="fa fa-search w3-margin-right text-btn" ></i> <b>Search availability</b>
+          </button>
+        </form>
+      </div>
+    </div>
+  </header>
+</section>
+
+<!--transportation-->
+<section class="transport" id="iternary2">
+<div class="booking-container">
+  <div class="heading-container">
+    <h1>Ride Your Way</h1>
+    <h3>--Book your Tickets with Us--</h3>
+  </div>
+  <!-- Mode Selection Buttons -->
+  <div class="booking-btn-group">
+      <button type="button" onclick="showForm('flight-booking-form')">Flights</button>
+      <button type="button" onclick="showForm('cab-booking-form')">Cabs</button>
+      <button type="button" onclick="showForm('train-booking-form')">Trains</button>
+      <button type="button" onclick="showForm('bus-booking-form')">Buses</button>
+  </div>
+
+  <!-- Common Information Form -->
+  <form id="common-booking-form" class="active">
+      <label for="origin-location">Origin:</label>
+      <input type="text" id="origin-location" placeholder="Enter city or location" required>
+
+      <label for="destination-location">Destination:</label>
+      <input type="text" id="destination-location" placeholder="Enter city or location" required>
+<br><br>
+      <label for="travel-date-picker">Date of Travel:</label>
+      <input type="date" id="travel-date-picker" required>
+
+      <label for="passenger-count">Number of Passengers:</label>
+      <input type="number" id="passenger-count" min="1" max="10" value="1" required>
+  </form>
+
+  <!-- Flight Booking Form -->
+  <form id="flight-booking-form" class="booking-form" onsubmit="submitBookingForm('flight'); return false;">
+    <br>
+      <label for="flight-class-select">Flight Class:</label>
+      <select id="flight-class-select" required>
+          <option value="">Select</option>
+          <option value="economy">Economy</option>
+          <option value="business">Business</option>
+          <option value="first-class">First Class</option>
+      </select>
+      <button type="submit" disabled>Book Flight</button>
+  </form>
+
+  <!-- Cab Booking Form -->
+  <form id="cab-booking-form" class="booking-form" onsubmit="submitBookingForm('cab'); return false;"><br>
+      <label for="cab-pickup-time">Pickup Time:</label>
+      <input type="datetime-local" id="cab-pickup-time" required>
+      <button type="submit" disabled>Book Cab</button>
+  </form>
+
+  <!-- Train Booking Form -->
+  <form id="train-booking-form" class="booking-form" onsubmit="submitBookingForm('train'); return false;"><br>
+      <label for="train-class-select">Train Class:</label>
+      <select id="train-class-select" required>
+          <option value="">Select</option>
+          <option value="sleeper">Sleeper</option>
+          <option value="ac">AC</option>
+          <option value="general">General</option>
+      </select>
+      <button type="submit" disabled>Book Train</button>
+  </form>
+
+  <!-- Bus Booking Form -->
+  <form id="bus-booking-form" class="booking-form" onsubmit="submitBookingForm('bus'); return false;"><br>
+      <label for="bus-type-select">Bus Type:</label>
+      <select id="bus-type-select" required>
+          <option value="">Select</option>
+          <option value="sleeper">Sleeper</option>
+          <option value="semi-sleeper">Semi-Sleeper</option>
+          <option value="volvo">Volvo</option>
+      </select>
+      <button type="submit" disabled>Book Bus</button>
+  </form>
+
+</div>
+</section>
+<!---currency convertor-->
+<section class="currency-section my-5">
+  <div class="container">
+    <h2 class="text-center">Coin Flip Trip
+    </h2>
+    <p class="text-center smaller-text">--Find the exchange rates--</p> <!-- Smaller text below the heading -->
+    <div class="row align-items-center">
+      <!-- Left Image Column -->
+      <div class="col-md-6 d-none d-md-block">
+        <img src="./Assets/currency.jpg" alt="Currency Conversion" class="img-fluid rounded shadow" />
+      </div>
+      <!-- Right Converter Column -->
+      <div class="col-md-6">
+        <form id="currencyForm" class="currency-form p-4 shadow rounded">
+          <div class="mb-3">
+            <label for="amount" class="form-label">Enter Amount</label>
+            <input
+              class="form-control"
+              value="1"
+              type="number"
+              id="amount"
+              min="0"
+              step="0.01"
+            />
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-md-5">
+              <label for="fromCurrency" class="form-label">From</label>
+              <select id="fromCurrency" class="form-select"></select>
+            </div>
+            <div class="col-md-2 text-center align-self-center">
+              <i class="fas fa-exchange-alt fs-3"></i>
+            </div>
+            <div class="col-md-5">
+              <label for="toCurrency" class="form-label">To</label>
+              <select id="toCurrency" class="form-select"></select>
+            </div>
+          </div>
+
+          <div class="alert alert-info text-center msg">1 USD = 80 INR</div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary"><b>Catch the Exchange Rates</b></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <!-- About Section -->
+      <div class="col-md-4 mb-4">
+        <h5 class="text-uppercase fw-bold">About Us</h5>
+        <p>Discover the vibrant landscapes, culture, and heritage of India with us. We offer curated experiences to make your journey across India unforgettable.</p>
+      </div>
+
+      <!-- Popular Indian Destinations Section -->
+      <div class="col-md-2 mb-4">
+        <h5 class="text-uppercase fw-bold">Popular Destinations</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-decoration-none text-light">Goa</a></li>
+          <li><a href="#" class="text-decoration-none text-light">Jaipur, Rajasthan</a></li>
+          <li><a href="#" class="text-decoration-none text-light">Manali, Himachal Pradesh</a></li>
+          <li><a href="#" class="text-decoration-none text-light">Kerala Backwaters</a></li>
+        </ul>
+      </div>
+
+      <!-- Travel Services Section -->
+      <div class="col-md-2 mb-4">
+        <h5 class="text-uppercase fw-bold">Our Services</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-decoration-none text-light">Flight Bookings</a></li>
+          <li><a href="#" class="text-decoration-none text-light">Hotel Reservations</a></li>
+          <li><a href="#" class="text-decoration-none text-light">Guided City Tours</a></li>
+          <li><a href="#" class="text-decoration-none text-light">Cultural Experiences</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact & Social Media Section -->
+      <div class="col-md-4 mb-4">
+        <h5 class="text-uppercase fw-bold">Contact Us</h5>
+        <ul class="list-unstyled">
+          <li><i class="bi bi-geo-alt-fill"></i> 101 Tourism Road, New Delhi, India</li>
+          <li><i class="bi bi-telephone-fill"></i> +91 98765 43210</li>
+          <li><i class="bi bi-envelope-fill"></i> info@trekup.com</li>
+        </ul>
+
+        <!-- Social Media Icons -->
+        <div class="social-icons mt-3">
+          <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+</div>
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <small>&copy; 2024 Indian Travels. All rights reserved. | <a href="#" class="text-decoration-none text-light">Privacy Policy</a></small>
+    </div>
+  
+</footer>
+<button id="show-translate" style="display: none">
+  Show Google Translate
+</button>
+
+<!-- Scripts for form submission -->
+
+    <script src="./app.js"></script>
+    <button id="show-translate" style="display: none">
+      Show Google Translate
+    </button>
+
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            autoDisplay: false,
+          },
+          "google_translate_element"
+        );
+      }
+
+      // Show the Google Translate widget when the Language dropdown is clicked
+      document
+        .getElementById("show-btn")
+        .addEventListener("click", function () {
+          const translateElement = document.getElementById(
+            "google_translate_element"
+          );
+          translateElement.style.display =
+            translateElement.style.display === "none" ? "block" : "none";
+        });
+    </script>
+   <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js" ></script>
+  
+   <!-- Linking custom script -->
+   <script src="./chat.js"></script>
+   <script src="./currency.js"></script>  
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
+    <!--typewriter effect-->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed(".auto-type",{
+          strings :[
+              "नमस्ते ", 
+              "নমস্তে ", 
+              "வணக்கம்", 
+              "నమస్తే ", 
+              "ਹੈਲੋ ",
+              "HELLO"
+          ],
+          typeSpeed: 100,
+          backSpeed: 90,  // Increased the backspace speed
+          backDelay: 1000, // Delay before typing the next string
+          loop: true,
+      })
+  </script>  
+
+<script>
+  function showForm(formId) {
+      document.querySelectorAll('.booking-form').forEach(form => form.classList.remove('active'));
+      document.getElementById(formId).classList.add('active');
+      document.getElementById('common-booking-form').classList.add('active');
+      validateBookingForm();
+  }
+
+  function validateBookingForm() {
+      const commonValid = Array.from(document.querySelectorAll('#common-booking-form input')).every(input => input.value.trim() !== "");
+
+      document.querySelectorAll('.booking-form').forEach(form => {
+          if (form.id !== 'common-booking-form') {
+              const specificValid = Array.from(form.querySelectorAll('input, select')).every(input => input.value.trim() !== "");
+              const button = form.querySelector('button[type="submit"]');
+              button.disabled = !(commonValid && specificValid);
+          }
+      });
+  }
+
+  document.querySelectorAll('input, select').forEach(input => {
+      input.addEventListener('input', validateBookingForm);
+  });
+
+  function formatDate(dateString) {
+      const date = new Date(dateString);
+      return `${String(date.getDate()).padStart(2, '0')}/${String(date.getMonth() + 1).padStart(2, '0')}/${date.getFullYear()}`;
+  }
+
+  function submitBookingForm(type) {
+      const origin = document.getElementById('origin-location').value.trim();
+      const destination = document.getElementById('destination-location').value.trim();
+      const travelDate = formatDate(document.getElementById('travel-date-picker').value);
+      const passengerCount = document.getElementById('passenger-count').value;
+
+      let url = '';
+      const commonParams = `origin=${origin}&destination=${destination}&date=${travelDate}&passengerCount=${passengerCount}`;
+
+      if (type === 'flight') {
+          const flightClass = document.getElementById('flight-class-select').value;
+          url = "./flight.html";
+      } else if (type === 'cab') {
+          const cabTime = document.getElementById('cab-pickup-time').value;
+          url = "./cab.html";
+      } else if (type === 'train') {
+          const trainClass = document.getElementById('train-class-select').value;
+          url = `https://www.irctc.co.in/nget/train-search`;
+      } else if (type === 'bus') {
+          const busType = document.getElementById('bus-type-select').value;
+          url = "./bus.html";
+      }
+
+      if (url) {
+          window.location.href = url;
+      }
+  }
+</script>
+
+  </body> 
+</html>

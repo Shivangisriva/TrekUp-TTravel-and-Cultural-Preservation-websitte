@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ - Tourism & Culture Preservation</title>
+    <!-- Add Google Fonts for Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Add Font Awesome for icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <style>
+      body,
+      html {
+        font-family: "Poppins", sans-serif;
+        background: url("./Assets/faqbck.jpg") no-repeat center center; /* Ensure the image doesn't repeat and is centered */
+        background-size: contain; /* The image will scale to fit within the container without stretching */
+        background-attachment: fixed; /* Keeps the background fixed while scrolling */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100vh; /* Full viewport height */
+        text-align: center; /* Center all text horizontally */
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        border-radius: 8px;
+        flex-direction: column; /* Stack the FAQ section and image vertically */
+        align-items: center;
+        margin-top: 100px;
+        /* Center the content horizontally */
+      }
+
+      .faq-section {
+        max-width: 700px;
+        margin-top: 50px;
+      }
+
+      .faq-item {
+        margin-bottom: 25px;
+      }
+
+      .faq-question {
+        font-family: "Poppins", sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 10px;
+        background-color: #344966;
+        color: white;
+        border: none;
+        text-align: left;
+        width: 100%;
+        border-radius: 5px;
+        outline: none;
+        transition: background-color 0.3s;
+      }
+
+      .faq-question:hover {
+        background-color: #4f6475;
+      }
+
+      .faq-answer {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        color: #333;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border-left: 3px solid #edf4ed;
+        display: none;
+        margin-top: 5px;
+        border-radius: 5px;
+      }
+      .arrow {
+        float: right;
+        transition: transform 0.3s ease;
+        color: white;
+      }
+
+      .faq-question.active .arrow {
+        transform: rotate(180deg);
+      }
+
+      .image-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+      }
+
+      .image-section img {
+        max-width: 100%;
+        margin-bottom: 20px;
+        border-radius: 50%;
+        transition: transform 0.5s ease;
+      }
+
+      .image-section img:hover {
+        transform: rotate(360deg); /* Rotate the image 360 degrees on hover */
+      }
+
+      /*navbar*/
+      .navbar .brand-text {
+        font-size: 1.2rem;
+        /* Adjust font size */
+        color: #fff;
+        /* White text for visibility */
+        font-weight: bold;
+        font-style: italic;
+        display: inline-block;
+        margin-top: 4px;
+        /* Align vertically with the logo */
+      }
+
+      .navbar {
+        background-color: rgba(0, 0, 0, 0);
+      }
+
+      .navbar-dark .nav-link {
+        color: #ffffffb3;
+        /* Semi-transparent white */
+        transition: color 0.3s ease;
+      }
+
+      .navbar-dark .nav-link:hover {
+        color: #ffffff;
+        /* Bright white on hover */
+      }
+
+      /* Style for the active link */
+      .navbar-nav .nav-link {
+        position: relative;
+      }
+
+      .navbar-nav .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 3px;
+        background-color: white;
+        transition: width 0.4s ease;
+        /* Transition for underline */
+      }
+
+      .navbar-nav .nav-link.active::after {
+        width: 100%;
+        /* Full width when the link is active */
+      }
+
+      /* Optional: Hover effect */
+      .navbar-nav .nav-link:hover::after {
+        width: 100%;
+      }
+
+      @media (max-width: 768px) {
+        .navbar-nav {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .navbar-nav .nav-item {
+          margin: 10px 0;
+        }
+
+        .navbar-toggler {
+          display: block;
+        }
+
+        .search-input {
+          width: 100%;
+        }
+      }
+      .offcanvas {
+        background-color: #1a1a1a !important; /* Dark background for a sleek look */
+        color: #fff; /* White text for contrast */
+      }
+
+      .offcanvas-header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for separation */
+      }
+
+      .offcanvas-title {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #f8f9fa;
+      }
+
+      .btn-close {
+        filter: brightness(0) invert(1); /* Invert color for better visibility on dark background */
+      }
+
+      .offcanvas-body {
+        padding: 1.5rem 1rem;
+      }
+
+      .offcanvas-body ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .offcanvas-body ul li {
+        margin-bottom: 15px;
+      }
+
+      .offcanvas-body ul li a {
+        display: block;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.2rem;
+        color: #f8f9fa;
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s, transform 0.2s;
+      }
+
+      .offcanvas-body ul li a:hover {
+        background-color: #007bff; /* Highlight on hover */
+        transform: translateX(5px); /* Subtle movement effect */
+        color: #fff;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+        .offcanvas-title {
+          font-size: 1.2rem; /* Adjust title size for smaller screens */
+        }
+
+        .offcanvas-body ul li a {
+          font-size: 1rem; /* Adjust link size for smaller screens */
+          padding: 8px 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--navbar-->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark position-absolute w-100 top-0 mb-0"
+      style="background-color: rgba(0, 0, 0, 0.8)"
+    >
+      <div class="container-fluid">
+        <!-- Logo and "TrekkUp" Brand with Sidebar Trigger -->
+        <a
+          class="navbar-brand d-flex align-items-center"
+          href="#"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#sidebar"
+          aria-controls="sidebar"
+        >
+          <img
+            src="./Assets/logo.jpg"
+            alt="Logo"
+            width="40"
+            height="40"
+            class="d-inline-block align-text-top"
+          />
+          <span class="brand-text ms-2"
+            ><b><i>TrekUp</i></b></span
+          >
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item mx-3">
+              <a class="nav-link" aria-current="page" href="./index.html"
+                ><i class="fas fa-home"></i> Home</a
+              >
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="%"
+                ><i class="fas fa-user-friends"></i>Plan your Trip</a
+              >
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="./reviews.html"
+                ><i class="fas fa-briefcase"></i> Experience</a
+              >
+            </li>
+            <li class="nav-item mx-3">
+              <a
+                class="nav-link"
+                href="https://www.google.com/maps/search/tourist+spots+in+india"
+                target="_blank"
+              >
+                <i class="fas fa-map-marker-alt"></i> Map
+              </a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link active" target="_blank" href="./reviews.html"
+                ><i class="fas fa-star"></i>FAQ's</a
+              >
+            </li>
+            
+            <li class="nav-item" id="google_translate_element"></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--navbar ended-->
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="sidebar"
+      aria-labelledby="sidebarLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="sidebarLabel"></h5>
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="list-unstyled">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./index.html#iternary1">Book your Hotel</a></li>
+          <li><a href="./index.html#iternary2">Plan your Trip with Us</a></li>
+          <li><a href="./reviews.html" target="_blank">Reviews</a></li>
+          <li><a href="./index.html">Go to Maps</a></li>
+          <li><a href="./faq.html">FAQ's</a></li>
+          <li><a href="./login.html">Login here</a></li>
+        </ul>
+      </div>
+    </div>
+   
+    <li class="nav-item" id="google_translate_element"></li>
+    <div class="container">
+      <!-- Left Side: Single Image -->
+      <div class="image-section">
+        <img src="./Assets/faq.jpg" alt="Tourism Image" />
+      </div>
+
+      <!-- Right side with FAQs -->
+      <div class="faq-section">
+        <div class="faq-item">
+          <button class="faq-question">
+            What are the top things to do in India?
+            <i class="fas fa-chevron-down arrow"></i>
+          </button>
+          <div class="faq-answer">
+            Some of the top things to do in India include visiting the Taj Mahal
+            in Agra, trekking in the Himalayas, experiencing the backwaters of
+            Kerala, attending the Pushkar Camel Fair, and exploring the cultural
+            diversity of cities like Jaipur and Varanasi.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What are the best adventure activities to do in India?
+            <i class="fas fa-chevron-down arrow"></i>
+          </button>
+          <div class="faq-answer">
+            Adventure lovers can enjoy trekking in Himachal Pradesh, white-water
+            rafting in Rishikesh, paragliding in Bir Billing, scuba diving in
+            the Andaman Islands, or camel safari in the Thar Desert.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What are the top cultural experiences in India?
+            <i class="fas fa-chevron-down arrow"></i>
+          </button>
+          <div class="faq-answer">
+            India's cultural experiences include attending the Holi and Diwali
+            festivals, exploring ancient temples like the temples of Khajuraho,
+            visiting the vibrant markets of Rajasthan, and watching classical
+            dance performances like Kathakali and Bharatanatyam.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What are the best wildlife experiences in India?
+            <i class="fas fa-chevron-down arrow"></i>
+          </button>
+          <div class="faq-answer">
+            India is home to some of the world's most famous wildlife
+            sanctuaries, including Jim Corbett National Park, Ranthambore
+            National Park, Kaziranga National Park, and Sundarbans for tiger
+            safaris, elephant sightings, and bird watching.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What are the best luxury travel experiences in India?
+            <i class="fas fa-chevron-down arrow"></i>
+          </button>
+          <div class="faq-answer">
+            Luxury experiences in India include staying in heritage palaces in
+            Rajasthan, exploring the backwaters of Kerala on a private
+            houseboat, enjoying a royal experience at the Oberoi hotels, and
+            embarking on the Palace on Wheels train journey.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What are the best beach destinations in India?
+            <i class="fas fa-chevron-down arrow"></i>
+          </button>
+          <div class="faq-answer">
+            Popular beach destinations include Goa, Kerala’s Varkala and Kovalam
+            beaches, the Andaman Islands, Rishikesh, and the lesser-known
+            beaches of Gokarna in Karnataka.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What are some off-the-beaten-path destinations in India?
+            <i class="fas fa-chevron-down arrow"></i>
+          </button>
+          <div class="faq-answer">
+            Off-the-beaten-path destinations include Spiti Valley in Himachal
+            Pradesh, Ziro Valley in Arunachal Pradesh, Tawang in Arunachal
+            Pradesh, and the Rann of Kutch in Gujarat.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What is the food like in India? What should I try?
+            <i class="fas fa-chevron-down arrow"></i>
+          </button>
+          <div class="faq-answer">
+            Indian cuisine is diverse and flavorful. Some must-try dishes
+            include butter chicken, biryani, dosa, samosas, pav bhaji, and
+            sweets like gulab jamun and jalebi.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Is India a safe country for tourists?
+            <i class="fas fa-chevron-down arrow"></i>
+          </button>
+          <div class="faq-answer">
+            India is generally safe for tourists, but like in any other country,
+            it's important to take precautions. Stay in well-known areas, avoid
+            isolated places at night, and be cautious with your belongings.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const faqQuestions = document.querySelectorAll(".faq-question");
+
+      faqQuestions.forEach((question) => {
+        question.addEventListener("click", () => {
+          question.classList.toggle("active");
+          const answer = question.nextElementSibling;
+          if (answer.style.display === "block") {
+            answer.style.display = "none";
+          } else {
+            answer.style.display = "block";
+          }
+        });
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Basic styles for layout */
+body {
+  font-family: 'PT Sans', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #fff;
+  padding: 40px 20px;
+}
+
+.headline {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 3.5rem;
+  color: #333;
+  padding: 10px;
+  margin-bottom: 1rem;
+}
+
+.headline span {
+  display: inline-block;
+}
+
+.headline .red {
+  color: #ff0000; /* Red for "Real" */
+}
+
+.headline .green {
+  color: #4caf50; /* Green for "Adventures" and "Reviews" */
+}
+
+.sub-text {
+  font-size: 1.5rem; /* Smaller font size */
+  color: #555; /* Subtle color */
+  font-weight: 800;
+  margin-top: 10px; /* Adds space above the text */
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.container__left {
+  flex: 1;
+  padding-right: 30px;
+}
+
+.container__left h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.container__left p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.container__left button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container__right {
+  flex: 2;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow items to wrap */
+  margin-top: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 350px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 20px;
+  flex-grow: 1;
+}
+
+.card__content span {
+  font-size: 24px;
+  color: #ff9800;
+}
+
+.card__details p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card__details h4 {
+  font-size: 1.1rem;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .container__left {
+    text-align: center;
+    padding-right: 0;
+  }
+  .container__right {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+/* Further responsiveness for smaller devices */
+@media (max-width: 768px) {
+  .card {
+    max-width: 100%; /* Full width for cards */
+  }
+  .container__left {
+    padding: 0 20px;
+  }
+  .container__left h1 {
+    font-size: 2rem; /* Smaller heading on mobile */
+  }
+  .container__left p {
+    font-size: 0.9rem;
+  }
+  .container__left button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .container__left h1 {
+    font-size: 1.5rem;
+  }
+  .container__left p {
+    font-size: 0.8rem;
+  }
+  .container__left button {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
+
+/*footer*/
+.footer {
+    background-color: #343a40;
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+    background-size: cover;
+    color: #ffffff;
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+
+  .footer h5 {
+    color: #ffc107;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+
+  .footer p, .footer ul li {
+    color: #dcdcdc;
+    font-size: 0.9rem;
+  }
+
+  .footer ul {
+    padding-left: 0;
+  }
+
+  .footer ul li {
+    margin-bottom: 8px;
+  }
+
+  .footer ul li a {
+    color: #dcdcdc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer ul li a:hover {
+    color: #ffc107;
+  }
+
+  .footer .bi {
+    font-size: 1.25rem;
+    color: #dcdcdc;
+    transition: color 0.3s ease;
+  }
+
+  .footer .bi:hover {
+    color: #ffc107;
+  }
+
+  .footer .social-icons a {
+    color: #dcdcdc;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+  }
+
+  .footer .social-icons a:hover {
+    color: #ffc107;
+  }
+
+  .footer .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 10px;
+    color: #dcdcdc;
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .navbar .brand-text {
+    font-size: 1.2rem;
+    /* Adjust font size */
+    color: #fff;
+    /* White text for visibility */
+    font-weight: bold;
+    font-style: italic;
+    display: inline-block;
+    margin-top: 4px;
+    /* Align vertically with the logo */
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.navbar-dark .nav-link {
+    color: #ffffffb3;
+    /* Semi-transparent white */
+    transition: color 0.3s ease;
+}
+
+.navbar-dark .nav-link:hover {
+    color: #ffffff;
+    /* Bright white on hover */
+}
+
+/* Style for the active link */
+.navbar-nav .nav-link {
+    position: relative;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: white;
+    transition: width 0.4s ease;
+    /* Transition for underline */
+}
+
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+    /* Full width when the link is active */
+}
+
+/* Optional: Hover effect */
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 10px 0;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+}
+/* Sidebar Styling */
+.offcanvas {
+  background-color: #1a1a1a !important; /* Dark background for a sleek look */
+  color: #fff; /* White text for contrast */
+}
+
+.offcanvas-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for separation */
+}
+
+.offcanvas-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f8f9fa;
+}
+
+.btn-close {
+  filter: brightness(0) invert(1); /* Invert color for better visibility on dark background */
+}
+
+.offcanvas-body {
+  padding: 1.5rem 1rem;
+}
+
+.offcanvas-body ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.offcanvas-body ul li {
+  margin-bottom: 15px;
+}
+
+.offcanvas-body ul li a {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  color: #f8f9fa;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.offcanvas-body ul li a:hover {
+  background-color: #007bff; /* Highlight on hover */
+  transform: translateX(5px); /* Subtle movement effect */
+  color: #fff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .offcanvas-title {
+    font-size: 1.2rem; /* Adjust title size for smaller screens */
+  }
+
+  .offcanvas-body ul li a {
+    font-size: 1rem; /* Adjust link size for smaller screens */
+    padding: 8px 12px;
+  }
+}

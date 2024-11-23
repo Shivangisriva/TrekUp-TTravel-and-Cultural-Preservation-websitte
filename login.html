@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="login.css">
+    <title>Login Page</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Left Side Image -->
+        <div class="left-image">
+            <div class="text-overlay">
+                <h1>TrekUp</h1>
+                <p>"Your Next Adventure Starts Here</p>
+              </div>
+            <img src="./Assets/light.jpg" alt="Scenic Image">
+        </div>
+
+        <!-- Right Side Form with Toggle -->
+        <div class="right-form">
+            <div class="toggle-buttons">
+                <button onclick="showLogin()" id="login-btn">Login</button>
+                <button onclick="showSignup()" id="signup-btn">Sign Up</button>
+            </div>
+            <!-- Login Form -->
+            <div id="login-form" class="form-content">
+                <h1>Login</h1>
+                <form id="loginForm" action="index.html" method="post" autocomplete="off">
+                    <div class="input-group">
+                        <input type="email" name="email" placeholder="Email" required>
+                        <i class='fa fa-envelope'></i>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" name="password" placeholder="Password" required>
+                        <i class="fa fa-eye-slash"></i>
+                    </div>
+                    <button type="submit" class="submit-btn">Login</button>
+                </form>
+            </div>
+
+            <!-- Sign-Up Form -->
+            <div id="signup-form" class="form-content" style="display: none;">
+                <h1>Sign Up</h1>
+                <form action="" method="get">
+                    <div class="input-group">
+                        <input type="text" name="username" placeholder="User Name" required>
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" name="email" placeholder="Email" required>
+                        <i class='fa fa-envelope'></i>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" name="password" placeholder="Password" required>
+                        <i class="fa fa-eye-slash"></i>
+                    </div>
+                    <button type="submit" class="submit-btn">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

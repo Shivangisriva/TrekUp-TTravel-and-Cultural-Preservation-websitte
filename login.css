@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    margin: 0; /* Remove default margin */
+    font-family: 'Times New Roman', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #004FF9; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFF94C, #004FF9); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFF94C, #004FF9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover; /* Ensures the gradient fully covers the page */
+    background-position: center center; /* Keeps the gradient centered */
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+  }
+  
+  
+  .container {
+    display: flex;
+    width: 95%;
+    max-width: 1000px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .container:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Left image section */
+  .left-image {
+    flex: 2;
+    position: relative;
+  }
+  
+  .left-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Shadow for the text to stand out */
+  }
+  
+  .text-overlay h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-style: italic;
+  }
+  
+  .text-overlay p {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    line-height: 1.5;
+    margin-top: 0;
+    letter-spacing: 1px;
+  }
+  
+  /* Right form section */
+  .right-form {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    background: #fff;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  /* Modernized Toggle Buttons, Input Fields, and Submit Button - As previous */
+  
+  
+  /* Modernized Toggle Buttons */
+  .toggle-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .toggle-buttons button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(135deg, #4e54c8, #8f94fb); /* Gradient effect */
+    border: none;
+    border-radius: 30px; /* Rounded edges */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .toggle-buttons button:hover {
+    transform: translateY(-2px); /* Slight hover lift */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Deepen shadow on hover */
+  }
+  
+  /* Modernized Input Fields */
+  .input-group {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 15px;
+    padding-left: 45px;
+    font-size: 16px;
+    font-family: 'Times New Roman', serif; /* Times New Roman for input fields */
+    border: 1px solid #ddd;
+    border-radius: 30px; /* Rounded edges */
+    outline: none;
+    background: #f9f9f9; /* Light background for a clean look */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle inset shadow */
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .input-group input:focus {
+    border-color: #8f94fb;
+    box-shadow: 0 0 8px rgba(79, 82, 255, 0.2); /* Slight glow on focus */
+  }
+  
+  .input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+  }
+  
+  /* Modernized Submit Button */
+  .submit-btn {
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(135deg, #4e54c8, #8f94fb); /* Gradient effect */
+    border: none;
+    border-radius: 30px; /* Rounded edges */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .submit-btn:hover {
+    transform: translateY(-2px); /* Slight hover lift */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Deepen shadow on hover */
+  }
+  @media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto; /* Allow content to flow vertically */
+    }
+  
+    .left-image {
+        flex: 1;
+        height: 300px; /* Reduce image height for smaller screens */
+    }
+  
+    .right-form {
+        flex: 1;
+        width: 100%;
+        padding: 20px;
+    }
+  
+    .text-overlay {
+        font-size: 18px; /* Reduce font size for smaller screens */
+    }
+  
+    .text-overlay h1 {
+        font-size: 28px;
+    }
+  
+    .text-overlay p {
+        font-size: 14px;
+    }
+  
+    .input-group input {
+        font-size: 14px;
+        padding: 8px 30px;  /* Reduced padding for smaller screens */
+    }
+  
+    .input-group i {
+        font-size: 16px;  /* Reduce icon size on smaller screens */
+    }
+  
+    .toggle-buttons button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+  
+    .submit-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+  
+    .text-overlay h1 {
+        font-size: 24px;
+    }
+  
+    .text-overlay p {
+        font-size: 12px;
+    }
+  
+    .input-group input {
+        font-size: 12px;
+        padding: 6px 28px;  /* Even smaller padding */
+    }
+  
+    .input-group i {
+        font-size: 14px; /* Smaller icon size for very small screens */
+    }
+  
+    .toggle-buttons button {
+        font-size: 12px;
+        padding: 6px 14px;
+    }
+  
+    .submit-btn {
+        font-size: 12px;
+        padding: 6px 14px;
+    }
+  }

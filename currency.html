@@ -1,0 +1,49 @@
+<!---currency convertor-->
+<section class="currency-section my-5">
+    <div class="container">
+      <h2 class="text-center">Coin Flip Trip
+      </h2>
+      <p class="text-center smaller-text">--Find the exchange rates--</p> <!-- Smaller text below the heading -->
+      <div class="row align-items-center">
+        <!-- Left Image Column -->
+        <div class="col-md-6 d-none d-md-block">
+          <img src="./Assets/currency.jpg" alt="Currency Conversion" class="img-fluid rounded shadow" />
+        </div>
+        <!-- Right Converter Column -->
+        <div class="col-md-6">
+          <form id="currencyForm" class="currency-form p-4 shadow rounded">
+            <div class="mb-3">
+              <label for="amount" class="form-label">Enter Amount</label>
+              <input
+                class="form-control"
+                value="1"
+                type="number"
+                id="amount"
+                min="0"
+                step="0.01"
+              />
+            </div>
+  
+            <div class="row mb-3">
+              <div class="col-md-5">
+                <label for="fromCurrency" class="form-label">From</label>
+                <select id="fromCurrency" class="form-select"></select>
+              </div>
+              <div class="col-md-2 text-center align-self-center">
+                <i class="fas fa-exchange-alt fs-3"></i>
+              </div>
+              <div class="col-md-5">
+                <label for="toCurrency" class="form-label">To</label>
+                <select id="toCurrency" class="form-select"></select>
+              </div>
+            </div>
+  
+            <div class="alert alert-info text-center msg">1 USD = 80 INR</div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary"><b>Catch the Exchange Rates</b></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>

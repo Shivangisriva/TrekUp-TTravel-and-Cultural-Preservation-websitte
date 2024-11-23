@@ -1,0 +1,1374 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+}
+.container_f1 {
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.image1 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin-top: 38px;
+}
+
+.responsive-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensure the image fills its container */
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the text overlay */
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  z-index: 10;
+}
+
+/* Increased font size for the typewriter effect */
+.dynamic {
+  font-size: 4rem; /* Increased text size */
+  font-weight: bold;
+  color: #DAE3E5; /* Light text color */
+}
+
+.static-line {
+  font-size: 2.5rem; /* Increased font size for static text */
+  color: #DAE3E5; /* Light color for static text */
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+/* Optional: Adjust spacing or style for the typewriter text */
+.auto-type {
+  font-size: 4rem; /* Increased text size */
+  font-weight: bold;
+  color: #DAE3E5;
+}
+
+/* Optional: Add animation for the typewriter effect */
+@keyframes typing {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+.auto-type {
+  width: 0;
+  overflow: hidden;
+  border-right: 3px solid #DAE3E5;
+  animation: typing 4s steps(30) 1s forwards;
+}
+
+
+.responsive-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .container_f1 {
+    height: 100vh;
+    background-color: #1a1a1a; /* Ensure full viewport height */
+  }
+  .text-overlay {
+    padding: 15px;
+    width: 85%;
+  }
+
+  .dynamic {
+    font-size: 1.5rem; /* Smaller text size on tablets */
+  }
+
+  .static-line.quote {
+    font-size: 1rem; /* Adjust static quote for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .container_f1 {
+    height: 100vh;
+    background-color: #1a1a1a; /* Ensure full viewport height */
+  }
+
+
+  .text-overlay {
+    padding: 10px;
+    width: 90%;
+  }
+
+  .dynamic {
+    font-size: 1.2rem; /* Smaller text size on mobile */
+  }
+
+  .static-line.quote {
+    font-size: 0.9rem; /* Adjust for mobile readability */
+  }
+}
+
+.navbar .brand-text {
+  font-size: 1.2rem;
+  /* Adjust font size */
+  color: #fff;
+  /* White text for visibility */
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.navbar-dark .nav-link {
+  color: #ffffffb3;
+  /* Semi-transparent white */
+  transition: color 0.3s ease;
+}
+
+.navbar-dark .nav-link:hover {
+  color: #ffffff;
+  /* Bright white on hover */
+}
+
+/* Style for the active link */
+.navbar-nav .nav-link {
+  position: relative;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: white;
+  transition: width 0.4s ease;
+  /* Transition for underline */
+}
+
+.navbar-nav .nav-link.active::after {
+  width: 100%;
+  /* Full width when the link is active */
+}
+
+/* Optional: Hover effect */
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .navbar-nav .nav-item {
+      margin: 10px 0;
+  }
+
+  .navbar-toggler {
+      display: block;
+  }
+
+  .search-input {
+      width: 100%;
+  }
+}
+/* Sidebar Styling */
+.offcanvas {
+  background-color: black; /* Dark background for a sleek look */
+  color: #fff; /* White text for contrast */
+}
+
+.offcanvas-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for separation */
+}
+
+.offcanvas-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f8f9fa;
+}
+
+.btn-close {
+  filter: brightness(0) invert(1); /* Invert color for better visibility on dark background */
+}
+
+.offcanvas-body {
+  padding: 1.5rem 1rem;
+}
+
+.offcanvas-body ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.offcanvas-body ul li {
+  margin-bottom: 15px;
+}
+
+.offcanvas-body ul li a {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  color: #f8f9fa;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.offcanvas-body ul li a:hover {
+  background-color: #007bff; /* Highlight on hover */
+  transform: translateX(5px); /* Subtle movement effect */
+  color: #fff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .offcanvas-title {
+    font-size: 1.2rem; /* Adjust title size for smaller screens */
+  }
+
+  .offcanvas-body ul li a {
+    font-size: 1rem; /* Adjust link size for smaller screens */
+    padding: 8px 12px;
+  }
+}
+
+/* Attraction Section */
+.sliding-button {
+  position: relative;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  color: black;
+  background-color: #fbf7fa;
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  text-decoration: none; /* Ensure no underline */
+}
+
+.sliding-button span {
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.sliding-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: black;
+  transition: left 0.3s ease;
+  z-index: 1;
+}
+a{
+  text-decoration: none;
+}
+.sliding-button:hover::before {
+  left: 0;
+}
+
+.sliding-button:hover span {
+  color: white; /* Text color changes to white on hover */
+}
+
+/* Glowing effect on hover */
+.sliding-button:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 
+              0 0 30px rgba(255, 255, 255, 0.7), 
+              0 0 40px rgba(255, 255, 255, 0.7);
+}
+
+.attraction {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 0;
+  background-color: #f8f9fa;
+  overflow: hidden;
+  background: url("./Assets/bck_attraction.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.attraction h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 3.5rem;
+  text-align: center;
+  color: #333;
+  padding: 10px;
+ 
+}
+
+.subheading {
+  font-size: 1.5rem;
+  color: #555;
+  font-weight: 800;
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-y: hidden;
+}
+
+.scroll-container .card {
+  flex: 0 0 auto;
+  width: 18rem;
+  height: 500px;
+  position: relative;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.scroll-container .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.scroll-container .card:hover {
+  transform: translateY(-10px);
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card Styling */
+.scroll-container .card {
+    flex: 0 0 auto;
+    width: 18rem;
+    height: 500px;
+    /* Adjust height for the cards */
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    transition: transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-container .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Card hover effect */
+.scroll-container .card:hover {
+    transform: translateY(-10px);
+    /* Move the entire card up by 10px on hover */
+}
+
+/* Hide the scrollbar */
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+    .scroll-container {
+        flex-direction: column;
+        /* Stack cards vertically */
+        justify-content: center;
+        /* Center the cards vertically */
+        align-items: center;
+        /* Center the cards horizontally */
+        max-height: 600px;
+        /* Set a max height for scrolling */
+        overflow-y: auto;
+        /* Enable vertical scroll */
+    }
+
+    .card {
+        width: 80%;
+        /* Reduce the width of the cards */
+        height: auto;
+        /* Let the height adjust according to the content */
+        margin-bottom: 10px;
+        /* Add some space between cards */
+    }
+
+    .card img {
+        width: 100%;
+        /* Make images fill the width of the card */
+        height: 150px;
+        /* Reduce the height of the images */
+        object-fit: cover;
+        /* Ensure the image covers the area without distortion */
+    }
+
+    .attraction h1 {
+        font-size: 2rem;
+        /* Adjust title font size for smaller screens */
+        padding: 10px;
+        /* Reduced padding for smaller screens */
+    }
+}
+
+/* For even smaller screens like mobiles (max-width: 480px) */
+@media (max-width: 480px) {
+    .scroll-container {
+        flex-direction: column;
+        /* Stack cards vertically */
+        justify-content: center;
+        /* Center the cards vertically */
+        align-items: center;
+        /* Center the cards horizontally */
+        max-height: 400px;
+        /* Further reduce the max height for vertical scroll */
+    }
+
+    .card {
+        width: 90%;
+        /* Further reduce the width of the cards */
+        height: auto;
+        /* Adjust height based on content */
+        margin-bottom: 10px;
+        /* Add space between the cards */
+    }
+
+    .card img {
+        width: 100%;
+        /* Make images take full width */
+        height: 100px;
+        /* Further reduce the height of the images */
+        object-fit: cover;
+        /* Ensure the image covers the area without distortion */
+    }
+
+    .attraction h1 {
+        font-size: 1.5rem;
+        /* Make the heading smaller for small screens */
+        padding: 0;
+        /* Reduced padding even further for very small screens */
+    }
+}
+
+#google_translate_element {
+    display: none;
+    /* Initially hidden */
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    z-index: 9999;
+    background: white;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Currency Section */
+
+ /*festivals*/
+ .food-crafts-section {
+  background-color: #f8f9fa; /* Light grey background */
+  padding: 0;
+  width: 100%; /* Ensure full width */
+  box-sizing: border-box; /* Include padding in the width */
+}
+
+#festivalCarouselSection {
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align items to the start */
+  align-items: center;
+  padding: 0;
+  margin: 0; /* Remove default margin */
+  background: url("./Assets/bck_festivals.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+/* Center the title and description within the section */
+#festivalCarouselSection h2,
+#festivalCarouselSection p {
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+}
+
+/* Adjust header text */
+#pageHeader h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 3.5rem;
+  color: white;
+  margin: 10px 0 20px; /* Adjust spacing */
+}
+
+#pageHeader p {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+/* Make the carousel fill the section properly */
+#festivalCarousel {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto; /* Allow horizontal scrolling */
+  padding: 10px;
+}
+
+/* Carousel inner styling */
+.carousel-inner {
+  display: flex; /* Horizontal layout */
+  gap: 20px; /* Spacing between cards */
+  justify-content: flex-start; /* Align cards to the left */
+  align-items: center; /* Vertically center cards */
+  overflow-x: auto; /* Horizontal scroll */
+  scroll-snap-type: x mandatory; /* Snap scrolling for a better experience */
+  -ms-overflow-style: none; /* Hide scrollbar for IE */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  padding: 10px 0;
+}
+
+/* Hide scrollbars */
+.carousel-inner::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card styling */
+.card {
+  width: 18rem; /* Fixed width */
+  height: 380px; /* Fixed height */
+  flex-shrink: 0; /* Prevent shrinking */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); /* Box shadow */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  scroll-snap-align: start; /* Snap alignment for smooth scroll */
+}
+
+/* Card hover effect */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Image inside the card */
+.card-img-top {
+  height: 250px; /* Ensure consistent image height */
+  width: 100%; /* Full width */
+  object-fit: cover; /* Cover the card area */
+  border-radius: 4px; /* Optional rounded corners */
+}
+
+/* Text in cards */
+.card-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.card-text {
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Add responsiveness */
+@media (max-width: 768px) {
+  #festivalCarousel {
+    height: auto; /* Adjust height for smaller screens */
+  }
+
+  .carousel-inner {
+    flex-direction: row; /* Maintain horizontal scrolling */
+  }
+
+  .card {
+    width: 90%; /* Take most of the width on smaller screens */
+  }
+}
+
+
+/* For larger screens (Web view) */
+@media (min-width: 1024px) {
+  .carousel-inner {
+    flex-direction: row; /* Horizontal layout for larger screens */
+    gap: 20px; /* Space between cards */
+    overflow-x: auto; /* Horizontal scroll for overflow */
+    scroll-snap-type: x mandatory; /* Snapping on scroll */
+    -ms-overflow-style: none; /* Hide scrollbar in Internet Explorer */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+  }
+
+  .card {
+    width: 18rem;
+    height: 380px;
+  }
+
+  /* Hide the scrollbars for web view */
+  .carousel-inner::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Webkit browsers */
+  }
+}
+
+/* For medium screens (Tablets) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .carousel-inner {
+    gap: 15px; /* Adjust gap for medium screens */
+  }
+
+  .card {
+    width: 15rem;
+    height: 350px;
+  }
+
+  .card-img-top {
+    height: 230px;
+  }
+}
+
+/* For small screens (Phones) */
+@media (max-width: 767px) {
+  .carousel-inner {
+    gap: 10px; /* Adjust gap for small screens */
+    flex-direction: column; /* Column layout for smaller screens */
+    justify-content: center; /* Center cards vertically */
+    align-items: center; /* Center cards horizontally */
+    overflow-y: scroll; /* Vertical scroll for overflow */
+    max-height: 100%; /* Full height for vertical scrolling */
+  }
+
+  .card {
+    width: 15rem; /* Smaller card width */
+    height: 320px; /* Adjust height */
+  }
+
+  .card-img-top {
+    height: 200px; /* Adjust image height for small screens */
+  }
+
+  /* Hide the scrollbar in smaller screens */
+  .carousel-inner::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Webkit browsers */
+  }
+
+  .carousel-inner {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+ /*food and crafts*/
+ @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
+ @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+ figure.snip1477 {
+   font-family: 'Raleway', Arial, sans-serif;
+   position: relative;
+   overflow: hidden;
+   margin: 10px;
+   min-width: 230px;
+   max-width: 315px;
+   width: 100%;
+   color: #ffffff;
+   text-align: center;
+   font-size: 16px;
+   background-color: #000000;
+   border-radius: 9px;
+ }
+ .food-crafts-section {
+  background-color:white; /* Light greyish blue for the background */
+  padding: 50px 15px;
+  width: 100%;
+  box-sizing: border-box; /* Include padding in the width */
+  border-radius: 10px; /* Optional: Add a slight rounding to the section */
+ 
+}
+ figure.snip1477 *,
+ figure.snip1477 *:before,
+ figure.snip1477 *:after {
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+   -webkit-transition: all 0.55s ease;
+   transition: all 0.55s ease;
+ }
+ figure.snip1477 img {
+   max-width: 100%;
+   backface-visibility: hidden;
+   vertical-align: top;
+   opacity: 0.9;
+  
+ }
+ figure.snip1477 .title {
+   position: absolute;
+   top: 58%;
+   left: 25px;
+   padding: 5px 10px 10px;
+ }
+ figure.snip1477 .title:before,
+ figure.snip1477 .title:after {
+   height: 2px;
+   width: 400px;
+   position: absolute;
+   content: '';
+   background-color: #ffffff;
+ }
+ figure.snip1477 .title:before {
+   top: 0;
+   left: 10px;
+   -webkit-transform: translateX(100%);
+   transform: translateX(100%);
+ }
+ figure.snip1477 .title:after {
+   bottom: 0;
+   right: 10px;
+   -webkit-transform: translateX(-100%);
+   transform: translateX(-100%);
+ }
+ figure.snip1477 .title div:before,
+ figure.snip1477 .title div:after {
+   width: 2px;
+   height: 300px;
+   position: absolute;
+   content: '';
+   background-color: #ffffff;
+ }
+ figure.snip1477 .title div:before {
+   top: 10px;
+   right: 0;
+   -webkit-transform: translateY(100%);
+   transform: translateY(100%);
+ }
+ figure.snip1477 .title div:after {
+   bottom: 10px;
+   left: 0;
+   -webkit-transform: translateY(-100%);
+   transform: translateY(-100%);
+ }
+ figure.snip1477 h2,
+ figure.snip1477 h4 {
+   margin: 0;
+   text-transform: uppercase;
+ }
+ figure.snip1477 h2 {
+   font-weight: 400;
+ }
+ figure.snip1477 h4 {
+   display: block;
+   font-weight: 700;
+   background-color: #ffffff;
+   padding: 5px 10px;
+   color: #000000;
+ }
+ figure.snip1477 figcaption {
+   position: absolute;
+   bottom: 42%;
+   left: 25px;
+   text-align: left;
+   opacity: 0;
+   padding: 5px 60px 5px 10px;
+   font-size: 0.8em;
+   font-weight: 500;
+   letter-spacing: 1.5px;
+ }
+ figure.snip1477 figcaption p {
+   margin: 0;
+ }
+ figure.snip1477 a {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+ }
+ figure.snip1477:hover img,
+ figure.snip1477.hover img {
+   zoom: 1;
+   filter: alpha(opacity=35);
+   -webkit-opacity: 0.35;
+   opacity: 0.35;
+ }
+ figure.snip1477:hover .title:before,
+ figure.snip1477.hover .title:before,
+ figure.snip1477:hover .title:after,
+ figure.snip1477.hover .title:after,
+ figure.snip1477:hover .title div:before,
+ figure.snip1477.hover .title div:before,
+ figure.snip1477:hover .title div:after,
+ figure.snip1477.hover .title div:after {
+   -webkit-transform: translate(0, 0);
+   transform: translate(0, 0);
+ }
+ figure.snip1477:hover .title:before,
+ figure.snip1477.hover .title:before,
+ figure.snip1477:hover .title:after,
+ figure.snip1477.hover .title:after {
+   -webkit-transition-delay: 0.15s;
+   transition-delay: 0.15s;
+ }
+ figure.snip1477:hover figcaption,
+ figure.snip1477.hover figcaption {
+   opacity: 1;
+   -webkit-transition-delay: 0.2s;
+   transition-delay: 0.2s;
+ }
+ 
+ .container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   background-color:transparent;
+ }
+ .food-crafts
+ {
+  background-color: white;
+  background: url("./Assets/back_food.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
+ .container figure {
+   flex: 1 0 30%; /* Each card will take 30% of the container width */
+   margin-bottom: 20px;
+ }
+ 
+ @media (max-width: 768px) {
+   .container figure {
+     flex: 1 0 45%; /* For medium screens, each card will take 45% */
+   }
+ }
+ 
+ @media (max-width: 480px) {
+   .container figure {
+     flex: 1 0 100%; /* For small screens, each card will take 100% */
+   }
+ }
+ .food-crafts h1{
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-size: 3.5rem;
+  font-style: normal;
+    text-align: center;
+    color: #333;
+    padding: 10px;
+ }
+ .subheading2
+ {
+  font-size: 1.5rem; /* Smaller font size */
+    color: black; /* Subtle color */
+     /* Adds space above the text */
+    font-weight: 800; 
+    text-align:center;
+ }
+ @media (max-width: 768px) {
+  .food-crafts-container figure {
+    flex: 0 0 calc(50% - 20px); /* On medium screens, each card takes 50% */
+  }
+}
+
+@media (max-width: 480px) {
+  .food-crafts-container figure {
+    flex: 0 0 calc(75% - 20px); /* On small screens, each card takes 75% */
+  }
+}
+/*hotel booking*/
+.hotel.booking {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+}
+
+.w3-display-container {
+  position: relative;
+  width: 100%;
+  height: 100%; /* Ensures the background image covers the section */
+}
+
+.w3-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the background image covers the section */
+}
+
+/* Styling for the Itinerary Heading */
+.itinerary-heading {
+  position: absolute;
+  top: 0; /* Position at the top of the section */
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10; /* Makes sure the heading is on top of the image */
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.itinerary-heading h2 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-size: 3.5rem;
+  font-style: normal;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    /* White color for visibility on dark background */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a slight shadow to make the text stand out */
+  margin: 0;
+}
+
+/* Styling for the w3-display-left container */
+.w3-display-left {
+  position: absolute;
+  top: 55%;
+  left: 25%;
+  transform: translate(-50%, -50%); /* Centers the container */
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  padding: 16px;
+  width: 50%; /* Default width for larger screens */
+  max-width: 600px; /* Maximum width of the form */
+  box-sizing: border-box;
+  border-radius: 8px; /* Optional: adds rounded corners */
+  max-height: 70%; /* Limit the height of the container to 70% */
+  overflow-y: auto; /* Enables vertical scrolling if content overflows */
+}
+
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+  .w3-display-left {
+    width: 80%; /* Reduce the width to 80% for smaller screens */
+    max-width: 500px; /* Smaller maximum width */
+    padding: 8px; /* Reduce padding */
+    left: 50%; /* Keep it centered */
+    transform: translateX(-50%); /* Adjust for better centering */
+    max-height: 60%; /* Reduce the max height to 60% for smaller screens */
+  }
+}
+
+/* For screens smaller than 480px */
+@media (max-width: 480px) {
+  .w3-display-left {
+    width: 90%; /* Make the width 90% for mobile screens */
+    max-width: 400px; /* Smaller maximum width */
+    padding: 4px; /* Compact padding */
+    left: 50%; /* Keep it centered */
+    transform: translateX(-50%); /* Center on very small screens */
+    max-height: 50%; /* Further reduce the max height */
+  }
+}
+
+/* Adjust form layout on smaller screens */
+@media (max-width: 768px) {
+  .hotel.booking form #hotelForm {
+    width: 100%;
+    padding: 0 16px; /* Adds padding for readability */
+  }
+  .hotel.booking .w3-row-padding {
+    display: flex;
+    flex-direction: column; /* Stacks input fields vertically */
+  }
+  .hotel.booking .w3-half {
+    width: 100%; /* Full width on smaller screens */
+    margin-bottom: 16px; /* Adds spacing between fields */
+  }
+}
+
+/* Fine-tune button for smaller screens */
+@media (max-width: 480px) {
+  .custom-button {
+    width: 100%; /* Full-width button */
+    font-size: 16px; /* Adjust font size for readability */
+  }
+}
+
+/* Ensure navbar remains on top */
+.w3-navbar {
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+}
+/*currency*/
+.currency-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center content vertically */
+  height: 100vh; /* Full viewport height */
+  min-height: 100vh;
+  padding: 0 15px; /* Adjust padding for spacing */
+  background: url("./Assets/bck_currency.jpg");
+  background-size:cover;
+  background-repeat: no-repeat; /* Background color */
+  position: relative; /* Enable positioning for absolute elements */
+}
+
+/* Section Heading */
+.currency-section h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 3rem; /* Larger font size for prominence */
+  text-align: center;
+  color: #333;
+  position: absolute;
+  top: 10%; /* Position the heading near the top */
+  width: 100%; /* Ensure the heading spans full width */
+  margin: 0; /* Reset margin for precise positioning */
+  left:-12px;
+}
+
+/* Smaller Subheading Text */
+.smaller-text {
+  font-size: 1.5rem; /* Smaller font size */
+  color: #555;
+  font-weight: 800;
+  text-align: center;
+  position: absolute;
+  top: 17%; /* Position the subheading below the main heading */
+  width: 100%;
+  margin: 0;
+  left:-12px;
+}
+.currency-form {
+  z-index: 1000;
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.75); 
+}
+/* Remaining Content Styling */
+.currency-section .row {
+  margin-top: 10%; /* Push the row down to avoid overlapping with the heading */
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .currency-section h2 {
+    font-size: 2.5rem; /* Adjust heading size for smaller screens */
+    top: 5%; /* Adjust position for smaller screens */
+  }
+
+  .smaller-text {
+    font-size: 1.2rem; /* Adjust subheading size for smaller screens */
+    top: 12%; /* Adjust position for smaller screens */
+  }
+
+  .currency-section .row {
+    margin-top: 25%; /* Adjust spacing for smaller screens */
+  }
+}
+
+
+header {
+  text-align: center;
+  padding: 2rem 0;
+  position: relative;
+}
+header h1 {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-family: 'Lobster', cursive;
+  font-size: 2.5rem;
+}
+.transport {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("./Assets/bck_transport.jpeg") no-repeat center center;
+  background-size: cover;
+background-repeat: no-repeat;
+  /* Flexbox for Centering */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.booking-container {
+  max-width: 800px;
+  margin: 0 auto; /* Ensure it's centered horizontally in case of other layouts */
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.booking-btn-group {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+.booking-btn-group button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #0077cc;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.booking-btn-group button:hover {
+  background-color: #005fa3;
+}
+.booking-form {
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+}
+.booking-form.active {
+  display: flex;
+}
+label {
+  font-weight: bold;
+  color: #000;
+}
+input, select, button {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+input, select {
+  background-color: #fff;
+  color: #000;
+}
+button[type="submit"] {
+  background-color: #0077cc; /* Primary color */
+  color: white; /* Text color */
+  border: none; /* Remove default border */
+  border-radius: 8px; /* Smooth rounded corners */
+  padding: 12px 20px; /* Spacing for the button */
+  font-size: 16px; /* Modern readable font size */
+  font-weight: 600; /* Bold text for prominence */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: all 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+button[type="submit"]:hover {
+  background-color: #005fa3; /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight elevation */
+  box-shadow: 0 8px 20px rgba(0, 117, 204, 0.6); /* Glow effect */
+}
+
+button[type="submit"]:active {
+  background-color: #004a82; /* Even darker shade when clicked */
+  transform: translateY(0); /* Reset elevation */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Reduced shadow */
+}
+
+button[disabled] {
+  background-color: #ccc; /* Disabled background */
+  color: #666; /* Dimmed text color */
+  cursor: not-allowed; /* Indicate disabled state */
+  border-radius: 8px; /* Maintain rounded corners */
+  box-shadow: none; /* No shadow for disabled buttons */
+}
+
+button[disabled]:hover {
+  background-color: #ccc; /* No hover effect for disabled state */
+  transform: none; /* No transformation */
+}
+
+.heading-container {
+  position: absolute; /* Position the headings within the section */
+  top: 20px; /* Align to the top of the section */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust centering */
+}
+
+.heading-container h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 3.5rem;
+  text-align: center;
+  color: #333;
+  padding: 10px; /* Remove default margin */
+}
+
+.heading-container h3 {
+  font-size: 1.75rem;
+  color: #555;
+  font-weight: 800;
+}
+
+@media (max-width: 768px) {
+  .booking-btn-group button {
+    font-size: 14px; /* Slightly smaller font size */
+    padding: 8px 16px; /* Reduced padding */
+  }
+
+  form button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+  .booking-btn-group {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .heading-container h1 {
+    font-size: 24px;
+  }
+
+  .heading-container h3 {
+    font-size: 16px;
+  }
+
+  form {
+    gap: 8px;
+  }
+
+  form button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading-container h1 {
+    font-size: 20px;
+  }
+
+  .heading-container h3 {
+    font-size: 14px;
+  }
+
+  .booking-btn-group button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  form input,
+  form select {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  form button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+  .booking-btn-group button {
+    font-size: 12px; /* Smaller font size for mobile screens */
+    padding: 6px 12px; /* Compact padding for smaller buttons */
+  }
+
+  form button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+/*footer*/
+/*footer*/
+.footer {
+  background-color: #343a40;
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+  background-size: cover;
+  color: #ffffff;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.footer h5 {
+  color: #ffc107;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.footer p, .footer ul li {
+  color: #dcdcdc;
+  font-size: 0.9rem;
+}
+
+.footer ul {
+  padding-left: 0;
+}
+
+.footer ul li {
+  margin-bottom: 8px;
+}
+
+.footer ul li a {
+  color: #dcdcdc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer ul li a:hover {
+  color: #ffc107;
+}
+
+.footer .bi {
+  font-size: 1.25rem;
+  color: #dcdcdc;
+  transition: color 0.3s ease;
+}
+
+.footer .bi:hover {
+  color: #ffc107;
+}
+
+.footer .social-icons a {
+  color: #dcdcdc;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  color: #ffc107;
+}
+
+.footer .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 10px;
+  color: #dcdcdc;
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 20px;
+}
